@@ -22,7 +22,7 @@ class Chart extends StatelessWidget {
   final _BarChartType _barChartType;
 
   static const _chartHeight = 340.0;
-  static const _chartFadeAnimationDuration = Duration(milliseconds: 300);
+  static const _chartFadeAnimationDuration = Duration(milliseconds: 200);
   static const _barAnimationDuration = Duration(seconds: 1);
 
   @override
