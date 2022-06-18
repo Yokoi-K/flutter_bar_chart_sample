@@ -20,7 +20,7 @@ class BarChartItem {
     return List.generate(
       length,
       (_) => BarChartItem._(
-        // 200 ~ 300 $B$N(B[height]$B$r@8@.(B
+        // 200 ~ 300 の範囲の[height]を生成
         height: random.nextInt(200) + 101,
         color: color,
       ),
