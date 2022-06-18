@@ -68,7 +68,6 @@ class BarChartByContainer extends HookWidget {
             children: barChartItems
                 .map(
                   (item) => Container(
-                    width: barWidth,
                     decoration: BoxDecoration(
                       color: item.color,
                       borderRadius: const BorderRadius.only(
@@ -76,6 +75,7 @@ class BarChartByContainer extends HookWidget {
                         topRight: _barTopRadius,
                       ),
                     ),
+                    width: barWidth,
                     // それぞれの棒グラフの高さに応じてアニメーションの進捗を変える
                     height: item.height * animationHeight.value / maxBarHeight,
                   ),
