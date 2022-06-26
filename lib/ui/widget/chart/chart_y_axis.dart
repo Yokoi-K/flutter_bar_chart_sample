@@ -48,11 +48,11 @@ class _YAxisPainter extends CustomPainter {
 
     paint.strokeWidth = 1;
     for (var i = 0; i <= _scaleCount; i++) {
-      // $B%\!<%@!<(B
+      // ボーダー
       final y = yAxisScaleMarginTop * i;
       canvas.drawLine(Offset(0, y), Offset(yAxisWidth, y), paint);
 
-      // $B%F%-%9%H(B
+      // テキスト
       final scale = yAxisHeight - yAxisScaleMarginTop * i;
       makeTextPainter(scale.toInt()).paint(
         canvas,

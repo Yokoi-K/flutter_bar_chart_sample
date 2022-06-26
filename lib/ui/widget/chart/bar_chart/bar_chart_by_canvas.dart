@@ -36,7 +36,7 @@ class BarChartByCanvas extends HookWidget {
     );
 
     useEffect(() {
-      // [barChartItems]$B$,99?7$5$l$?%?%$%_%s%0$G%"%K%a!<%7%g%sH/2P(B
+      // [barChartItems]が更新されたタイミングでアニメーション発火
       Future.microtask(animationController.forward);
 
       return animationController.reset;
@@ -82,7 +82,7 @@ class _BarChartPainter extends CustomPainter {
     for (var i = 0; i < barChartItems.length; i++) {
       final item = barChartItems[i];
 
-      // $B$=$l$>$l$NK@%0%i%U$N9b$5$K1~$8$F%"%K%a!<%7%g%s$N?JD=$rJQ$($k(B
+      // それぞれの棒グラフの高さに応じてアニメーションの進捗を変える
       final animationBarHeight = item.height * animationHeight / yAxisHeight;
 
       final barX = xAxisEqualWidth * i + barMarginLeft;

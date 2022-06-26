@@ -65,14 +65,14 @@ class _XAxisPainter extends CustomPainter {
       final textPainter = makeTextPainter(i);
       final textY = size.height - textPainter.height;
 
-      // $B%\!<%@!<(B
+      // ボーダー
       canvas.drawVerticalDottedLine(
         paint: paint,
         x: x,
         maxY: size.height,
       );
 
-      // $B%F%-%9%H(B
+      // テキスト
       textPainter.paint(
         canvas,
         Offset(x + _scaleTextLeftMargin, textY),
@@ -90,7 +90,7 @@ extension on Canvas {
   static const _dotHeight = 2.0;
   static const _dotSpace = 2.0;
 
-  /// {x, y} $B$+$i(B {x, maxY} $B$^$G%I%C%H%\!<%@!<%i%$%s$rIA2h(B
+  /// {x, y} から {x, maxY} までドットボーダーラインを描画
   void drawVerticalDottedLine({
     required Paint paint,
     required double x,

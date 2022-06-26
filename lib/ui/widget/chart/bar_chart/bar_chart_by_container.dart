@@ -22,10 +22,10 @@ class BarChartByContainer extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    // $B%H%C%W%Z!<%8$KCV$$$F$$$k?eJ?J}8~$N(Bpadding$BJ,%^%$%J%9$9$k(B
+    // 水平のpaddingを引いたものを、描画可能な横幅とする
     final layoutWidth =
         MediaQuery.of(context).size.width - TopPage.chartHorizontalPadding * 2;
-    // $BK@%0%i%U0lK\$ND9$5!J(B[BarChartByCanvas]$B$G$N7W;;<0$HF1$8!K(B
+    // 棒グラフ一つ当たりの横幅を算出
     final barWidth = (layoutWidth - ChartYAxis.scaleTextWidth) /
         barChartItems.length *
         _barRatio;
@@ -48,7 +48,7 @@ class BarChartByContainer extends HookWidget {
     );
 
     useEffect(() {
-      // [barChartItems]$B$,99?7$5$l$?%?%$%_%s%0$G%"%K%a!<%7%g%sH/2P(B
+      // [barChartItems]が更新されたタイミングでアニメーション発火
       Future.microtask(animationController.forward);
 
       return animationController.reset;
@@ -65,6 +65,7 @@ class BarChartByContainer extends HookWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.end,
+            // 与えられた[barChartItems]の数だけ[Container]を表示させる
             children: barChartItems
                 .map(
                   (item) => Container(
@@ -76,7 +77,7 @@ class BarChartByContainer extends HookWidget {
                       ),
                     ),
                     width: barWidth,
-                    // $B$=$l$>$l$NK@%0%i%U$N9b$5$K1~$8$F%"%K%a!<%7%g%s$N?JD=$rJQ$($k(B
+                    // それぞれの棒グラフの高さに応じてアニメーションの進捗を変える
                     height: item.height * animationHeight.value / maxBarHeight,
                   ),
                 )
